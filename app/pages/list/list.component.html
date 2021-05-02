@@ -1,0 +1,17 @@
+<div class="list" nz-row nzAlign="middle" nzJustify="space-around">
+  <div *ngFor="let movie of moviesList | orderBy:moviesList" nz-col nzLg="8" nzMd="12" nzSm="18" nzSpan="4"
+       nzXl="6" nzXs="24">
+    <nz-card [nzActions]="[detalhes]" [nzCover]="poster" nzHoverable style="width:240px">
+      <nz-card-meta nzDescription="{{movie.release_date | date}}" nzTitle="{{movie.title}}"></nz-card-meta>
+      <app-movie-stars [voteAverage]="movie.vote_average"></app-movie-stars>
+    </nz-card>
+    <ng-template #poster>
+      <img alt="{{movie.title}} poster" nz-image
+           nzSrc="https://www.themoviedb.org/t/p/w220_and_h330_face{{movie.poster_path}}"/>
+    </ng-template>
+    <ng-template #detalhes>
+      <button (click)="goToDetails(movie.id)" nz-button nzType="primary">Ver detalhes</button>
+    </ng-template>
+  </div>
+  <nz-back-top></nz-back-top>
+</div>
