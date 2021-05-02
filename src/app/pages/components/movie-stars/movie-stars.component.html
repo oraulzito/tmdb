@@ -1,0 +1,11 @@
+<span>Nota: {{voteAverage}}</span>
+<br>
+<ng-template [ngForOf]="[].constructor(11)" let-i="index" let-v ngFor>
+  <ng-template [ngIf]="i < (voteInt)">
+    <i [nzTwotoneColor]="(6 < (voteInt)) ? '#ebd22f' : '#f00'" nz-icon
+       nzTheme="twotone" nzType="star"></i>
+  </ng-template>
+  <ng-template [ngIf]="i > (voteInt)">
+    <i nz-icon nzTheme="outline" nzType="star"></i>
+  </ng-template>
+</ng-template>

@@ -1,0 +1,13 @@
+.div-img {
+  height: 100%;
+}
+
+.img-poster {
+  height: 100%;
+}
+
+@media screen and (max-device-width: 768px) {
+  .div-img {
+    height: 50%;
+  }
+}
